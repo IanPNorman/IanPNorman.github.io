@@ -1,10 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My First HTML Page</title>
+    <meta charset="UTF-8">
+    <title>Game Development Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #363a42;
+            color: white;
+        }
+
+        /* Top bar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2e3138;
+            padding: 15px 20px;
+        }
+
+            .topbar .name {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+        /* Hamburger menu icon */
+        .hamburger {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Side menu */
+        .sidemenu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #1f2126;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+            .sidemenu a {
+                padding: 10px 30px;
+                text-decoration: none;
+                color: white;
+                display: block;
+                transition: 0.2s;
+            }
+
+                .sidemenu a:hover {
+                    background-color: #444;
+                }
+
+            /* Close button */
+            .sidemenu .closebtn {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 2em;
+                cursor: pointer;
+            }
+
+        header {
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is my first web page.</p>
+
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="name">Ian Norman</div>
+        <div class="hamburger" onclick="openMenu()">&#9776;</div>
+    </div>
+
+    <!-- Slide-out side menu -->
+    <div id="menu" class="sidemenu">
+        <span class="closebtn" onclick="closeMenu()">&times;</span>
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main content -->
+    <header>Game Development Portfolio</header>
+
+    <script>function openMenu() {
+            document.getElementById("menu").style.width = "250px";
+        }
+
+        function closeMenu() {
+            document.getElementById("menu").style.width = "0";
+        }</script>
+
 </body>
 </html>
