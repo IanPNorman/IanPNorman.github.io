@@ -5,15 +5,68 @@
     <title>Game Development Portfolio</title>
     <style>
         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
             background-color: #363a42;
             color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
         }
 
+        /* Top bar */
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2e3138;
+            padding: 15px 20px;
+        }
+
+            .topbar .name {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+        /* Hamburger menu icon */
+        .hamburger {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        /* Side menu */
+        .sidemenu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #1f2126;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+            .sidemenu a {
+                padding: 10px 30px;
+                text-decoration: none;
+                color: white;
+                display: block;
+                transition: 0.2s;
+            }
+
+                .sidemenu a:hover {
+                    background-color: #444;
+                }
+
+            /* Close button */
+            .sidemenu .closebtn {
+                position: absolute;
+                top: 15px;
+                right: 20px;
+                font-size: 2em;
+                cursor: pointer;
+            }
+
         header {
-            padding: 20px;
+            padding: 40px 20px;
             text-align: center;
             font-size: 2em;
             font-weight: bold;
@@ -21,6 +74,73 @@
     </style>
 </head>
 <body>
+
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="name">Ian Norman</div>
+        <div class="hamburger" onclick="openMenu()">&#9776;</div>
+    </div>
+
+    <!-- Slide-out side menu -->
+    <div id="menu" class="sidemenu">
+        <span class="closebtn" onclick="closeMenu()">&times;</span>
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- Main content -->
     <header>Game Development Portfolio</header>
+
+    <!-- Introduction Section -->
+    <section style="padding: 60px 20px; text-align: center;">
+        <h2 style="font-size: 2em; margin-bottom: 20px;">Introduction</h2>
+        <p style="max-width: 700px; margin: 0 auto;">
+            Welcome to my game development portfolio. My name is Ian Norman. Here you'll find some of my featured game projects showcasing my skills in Unity development, C# programming, and collaborative design.
+        </p>
+    </section>
+
+    <!-- Key Games Section -->
+    <section style="padding: 40px 20px; text-align: center;">
+        <h2 style="font-size: 2em; margin-bottom: 30px;">Key Games</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+
+            <!-- Game Card 1 -->
+            <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
+                <img src="https://via.placeholder.com/300x180" alt="Game 1 Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+                <h3>Shadow Runner</h3>
+                <p><strong>Summary:</strong> A stealth platformer where you sneak past guards in a dystopian world.</p>
+                <p><strong>Contributions:</strong> Level design, AI scripting, and lighting setup using Unity URP.</p>
+            </div>
+
+            <!-- Game Card 2 -->
+            <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
+                <img src="https://via.placeholder.com/300x180" alt="Game 2 Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
+                <h3>Galactic Forge</h3>
+                <p><strong>Summary:</strong> A modular spaceship builder with tower defense elements in space.</p>
+                <p><strong>Contributions:</strong> Multiplayer logic, modular ship system, and UI design.</p>
+            </div>
+
+            <!-- Add more cards by copying and pasting this block -->
+            <!-- Example:
+            <div style="..."> ... </div>
+            -->
+
+        </div>
+    </section>
+
+
+
+    <script>
+        function openMenu() {
+            document.getElementById("menu").style.width = "250px";
+        }
+
+        function closeMenu() {
+            document.getElementById("menu").style.width = "0";
+        }</script>
+
 </body>
 </html>
