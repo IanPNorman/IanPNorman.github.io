@@ -25,7 +25,6 @@
                 font-weight: bold;
             }
 
-        /* Hamburger menu icon */
         .hamburger {
             font-size: 1.5em;
             cursor: pointer;
@@ -56,7 +55,6 @@
                     background-color: #444;
                 }
 
-            /* Close button */
             .sidemenu .closebtn {
                 position: absolute;
                 top: 15px;
@@ -71,6 +69,46 @@
             font-size: 2em;
             font-weight: bold;
         }
+
+        /* Carousel styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+            .carousel img {
+                width: 100%;
+                display: none;
+                border-radius: 8px;
+            }
+
+                .carousel img:first-child {
+                    display: block;
+                }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 1;
+            border-radius: 4px;
+        }
+
+            .carousel-btn.left {
+                left: 10px;
+            }
+
+            .carousel-btn.right {
+                right: 10px;
+            }
     </style>
 </head>
 <body>
@@ -97,41 +135,108 @@
     <section style="padding: 60px 20px; text-align: center;">
         <h2 style="font-size: 2em; margin-bottom: 20px;">Introduction</h2>
         <p style="max-width: 700px; margin: 0 auto;">
-            Welcome to my game development portfolio. My name is Ian Norman. Here you'll find some of my featured game projects showcasing my skills in Unity development, C# programming, and collaborative design.
+            Welcome to my game development portfolio. My name is Ian Norman. Here you'll find some of my featured game projects showcasing my skills in Unity development, C# programming, and collaborative design to make fun games.
         </p>
     </section>
 
-    <!-- Key Games Section -->
     <section style="padding: 40px 20px; text-align: center;">
-        <h2 style="font-size: 2em; margin-bottom: 30px;">Key Games</h2>
+        <h2 style="font-size: 2em; margin-bottom: 30px;">Personal Projects</h2>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
 
-            <!-- Game Card 1 -->
+            <!-- Game Card Example -->
             <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
-                <img src="https://via.placeholder.com/300x180" alt="Game 1 Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-                <h3>Shadow Runner</h3>
+                <h3>TTRPG Survival Game</h3>
+                <!-- Carousel -->
+                <div class="carousel" data-index="0">
+                    <img src="images/TTRPG1.png">
+                    <img src="images/TTRPG2.png" style="display:none;">
+                    <img src="images/TTRPG3.png" style="display:none;">
+                    <img src="images/TTRPG4.png" style="display:none;">
+                    <button class="carousel-btn left" onclick="prevImage(this)">&#10094;</button>
+                    <button class="carousel-btn right" onclick="nextImage(this)">&#10095;</button>
+                </div>
+
                 <p><strong>Summary:</strong> A stealth platformer where you sneak past guards in a dystopian world.</p>
                 <p><strong>Contributions:</strong> Level design, AI scripting, and lighting setup using Unity URP.</p>
             </div>
 
-            <!-- Game Card 2 -->
+            <!-- You can duplicate this card for each game -->
             <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
-                <img src="https://via.placeholder.com/300x180" alt="Game 2 Screenshot" style="width: 100%; border-radius: 8px; margin-bottom: 10px;">
-                <h3>Galactic Forge</h3>
+                <h3>Biggies' Pizza Run</h3>
+                <div class="carousel" data-index="0">
+                    <img src="images/Biggies1.png">
+                    <img src="images/Biggies4.png" style="display:none;">
+                    <img src="images/Biggies2.png" style="display:none;">
+                    <img src="images/Biggies3.png" style="display:none;">
+                    <img src="images/Biggies5.png" style="display:none;">
+                    <img src="images/Biggies6.png" style="display:none;">
+                    <img src="images/Biggies7.png" style="display:none;">
+                    <button class="carousel-btn left" onclick="prevImage(this)">&#10094;</button>
+                    <button class="carousel-btn right" onclick="nextImage(this)">&#10095;</button>
+                </div>
+
                 <p><strong>Summary:</strong> A modular spaceship builder with tower defense elements in space.</p>
                 <p><strong>Contributions:</strong> Multiplayer logic, modular ship system, and UI design.</p>
             </div>
 
-            <!-- Add more cards by copying and pasting this block -->
-            <!-- Example:
-            <div style="..."> ... </div>
-            -->
+            <!-- Add more game cards here as needed -->
+            <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
+                <h3>Towers</h3>
+                <div class="carousel" data-index="0">
+                    <img src="images/Github.png">
+                    <img src="images/UnityLogo.png" style="display:none;">
+                    <button class="carousel-btn left" onclick="prevImage(this)">&#10094;</button>
+                    <button class="carousel-btn right" onclick="nextImage(this)">&#10095;</button>
+                </div>
+
+                <p><strong>Summary:</strong> A modular spaceship builder with tower defense elements in space.</p>
+                <p><strong>Contributions:</strong> Multiplayer logic, modular ship system, and UI design.</p>
+            </div>
+
+            <!-- Add more game cards here as needed -->
+            <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
+                <h3>Gunslinger Hilda</h3>
+                <div class="carousel" data-index="0">
+                    <img src="images/Github.png">
+                    <img src="images/UnityLogo.png" style="display:none;">
+                    <button class="carousel-btn left" onclick="prevImage(this)">&#10094;</button>
+                    <button class="carousel-btn right" onclick="nextImage(this)">&#10095;</button>
+                </div>
+
+                <p><strong>Summary:</strong> A modular spaceship builder with tower defense elements in space.</p>
+                <p><strong>Contributions:</strong> Multiplayer logic, modular ship system, and UI design.</p>
+            </div>
+
+            <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
+                <h3>Peaches</h3>
+                <div class="carousel" data-index="0">
+                    <img src="images/Github.png">
+                    <img src="images/UnityLogo.png" style="display:none;">
+                    <button class="carousel-btn left" onclick="prevImage(this)">&#10094;</button>
+                    <button class="carousel-btn right" onclick="nextImage(this)">&#10095;</button>
+                </div>
+
+                <p><strong>Summary:</strong> A modular spaceship builder with tower defense elements in space.</p>
+                <p><strong>Contributions:</strong> Multiplayer logic, modular ship system, and UI design.</p>
+            </div>
+
+            <div style="background-color: #2e3138; padding: 20px; border-radius: 10px; text-align: left;">
+                <h3>Toad Lord</h3>
+                <div class="carousel" data-index="0">
+                    <img src="images/Github.png">
+                    <img src="images/UnityLogo.png" style="display:none;">
+                    <button class="carousel-btn left" onclick="prevImage(this)">&#10094;</button>
+                    <button class="carousel-btn right" onclick="nextImage(this)">&#10095;</button>
+                </div>
+
+                <p><strong>Summary:</strong> A modular spaceship builder with tower defense elements in space.</p>
+                <p><strong>Contributions:</strong> Multiplayer logic, modular ship system, and UI design.</p>
+            </div>
+            <!-- Add more game cards here as needed -->
 
         </div>
     </section>
-
-
 
     <script>
         function openMenu() {
@@ -140,7 +245,28 @@
 
         function closeMenu() {
             document.getElementById("menu").style.width = "0";
-        }</script>
+        }
+
+        function nextImage(button) {
+            const carousel = button.parentElement;
+            const images = carousel.querySelectorAll('img');
+            let index = parseInt(carousel.dataset.index) || 0;
+            images[index].style.display = 'none';
+            index = (index + 1) % images.length;
+            images[index].style.display = 'block';
+            carousel.dataset.index = index;
+        }
+
+        function prevImage(button) {
+            const carousel = button.parentElement;
+            const images = carousel.querySelectorAll('img');
+            let index = parseInt(carousel.dataset.index) || 0;
+            images[index].style.display = 'none';
+            index = (index - 1 + images.length) % images.length;
+            images[index].style.display = 'block';
+            carousel.dataset.index = index;
+        }
+    </script>
 
 </body>
 </html>
